@@ -1,6 +1,21 @@
 <html>
 <head>
 <style>
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+h2 {
+  font-size: 15px;
+  margin: 0;
+  text-align: top;
+  width: 100%;
+  position: absolute;
+  top: 0;
+}
+
 :root {
   --clr-neon: hsl(317 100% 54%);
   --clr-bg: hsl(323 21% 16%);
@@ -87,10 +102,21 @@ body {
 </style>
 </head>
 <body>
+<script src="app.js" defer></script>
+<script src="https://api.countapi.xyz/hit/negr.ml2/visits?callback=liveViews" async>
+</script>
+
+<h2 id='visits'>0</h2>
+
 <!-- Google fonts -->
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@700&display=swap" rel="stylesheet">
 
 <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="neon-button">Jsi negr</a>
+<script>
+function liveViews(response) {
+    document.getElementById('visits').innerText = response.value;
+}
+</script>
 </body>
 </html>
