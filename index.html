@@ -16,9 +16,17 @@ h2 {
   top: 0;
 }
 
+h3 {
+  font-size: 45px;
+  margin: 0;
+  text-align: top;
+  position: absolute;
+  top: 37%;
+}
+
 :root {
-  --clr-neon: hsl(317 100% 54%);
-  --clr-bg: hsl(323 21% 16%);
+  --clr-neon: rgb(65 105 225);
+  --clr-bg: rgb(24 24 24);
 }
 
 *,
@@ -29,81 +37,71 @@ h2 {
 
 body {
   min-height: 100vh;
-  display: grid;
+  display: flex;
   place-items: center;
   background: var(--clr-bg);
   font-family: "Balsamiq Sans", cursive;
   color: var(--clr-neon);
   padding-right: 10rem;
+  justify-content: center;
 }
 
-.neon-button {
-  font-size: 4rem;
-
-  display: inline-block;
-  cursor: pointer;
-  text-decoration: none;
-  color: var(--clr-neon);
-  border: var(--clr-neon) 0.125em solid;
-  padding: 0.25em 1em;
-  border-radius: 0.25em;
-
-  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em currentColor;
-
-  box-shadow: inset 0 0 0.5em 0 var(--clr-neon), 0 0 0.5em 0 var(--clr-neon);
-
-  position: relative;
+.myButton {
+	box-shadow: 0px 0px 0px 2px #9fb4f2;
+	background:linear-gradient(to bottom, #7892c2 5%, #476e9e 100%);
+	background-color:#7892c2;
+	border-radius:10px;
+	border:1px solid #4e6096;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:19px;
+	padding:12px 37px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #283966;
+}
+.myButton:hover {
+	background:linear-gradient(to bottom, #476e9e 5%, #7892c2 100%);
+	background-color:#476e9e;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
 }
 
-.neon-button::before {
-  pointer-events: none;
-  content: "";
-  position: absolute;
-  background: var(--clr-neon);
-  top: 120%;
-  left: 0;
-  width: 100%;
-  height: 100%;
-
-  transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
-  filter: blur(1em);
-  opacity: 0.7;
+.myButton2 {
+	box-shadow: 0px 0px 0px 2px #cf866c;
+	background:linear-gradient(to bottom, #d0451b 5%, #bc3315 100%);
+	background-color:#d0451b;
+	border-radius:10px;
+	border:1px solid #942911;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:19px;
+	padding:12px 37px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #854629;
+}
+.myButton2:hover {
+	background:linear-gradient(to bottom, #bc3315 5%, #d0451b 100%);
+	background-color:#bc3315;
+}
+.myButton2:active {
+	position:relative;
+	top:1px;
 }
 
-.neon-button::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  box-shadow: 0 0 2em 0.5em var(--clr-neon);
-  opacity: 0;
-  background-color: var(--clr-neon);
-  z-index: -1;
-  transition: opacity 100ms linear;
-}
+        
 
-.neon-button:hover,
-.neon-button:focus {
-  color: var(--clr-bg);
-  text-shadow: none;
-}
-
-.neon-button:hover::before,
-.neon-button:focus::before {
-  opacity: 1;
-}
-.neon-button:hover::after,
-.neon-button:focus::after {
-  opacity: 1;
-}
 
 </style>
 </head>
 <body>
 <script src="app.js" defer></script>
-<script src="https://api.countapi.xyz/hit/negr.ml2/visits?callback=liveViews" async>
+<script src="https://api.countapi.xyz/hit/negr.ml3/visits?callback=liveViews" async>
 </script>
 
 <h2 id='visits'>0</h2>
@@ -112,7 +110,11 @@ body {
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@700&display=swap" rel="stylesheet">
 
-<a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="neon-button">Jsi negr</a>
+<h3> CS:GO Jailbreak </h3>
+<a href="http://hlstats.fakaheda.eu/hlxce_186497/hlstats.php" style="margin:1rem;" class="myButton">hlstats</a>
+<a href="https://banlist.gamesites.cz/csgo/jb/" style="margin:1rem;" class="myButton">banlist</a>
+<a href="https://www.gamesites.cz/forum/counter-strike-global-offensive-f49.html" style="margin:1rem;" class="myButton">forum</a>
+<a href="https://www.gamesites.cz/forum/admini-f931.html" style="margin:1rem;" class="myButton2">admin forum</a>
 <script>
 function liveViews(response) {
     document.getElementById('visits').innerText = response.value;
