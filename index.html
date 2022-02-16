@@ -1,7 +1,7 @@
 <title id="page-title"></title>
 <!-- Display the countdown timer in an element -->
 <p id="demo">
-    <h2>Přijimačky nejsou daleko3</h2>
+    <h2>Přijimačky nejsou daleko</h2>
 </p>
 <script>
 // Set the date we're counting down to
@@ -24,7 +24,7 @@ var x = setInterval(function() {
 
   // Display the result in the element with id="demo"
   document.getElementById("demo").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
-  document.getElementById("page-title").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s "; 
+  document.getElementById("page-title").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s - Přijimačky"; 
 
   // If the count down is finished, write some text
   if (distance < 0) {
