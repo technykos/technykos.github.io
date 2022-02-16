@@ -1,125 +1,59 @@
-<html>
-<head>
-<style>
-@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
-
-* {
-  box-sizing: border-box;
-}
-
-h2 {
-  font-size: 15px;
-  margin: 0;
-  text-align: top;
-  width: 100%;
-  position: absolute;
-  top: 0;
-}
-
-h3 {
-  font-size: 45px;
-  margin: 0;
-  text-align: top;
-  position: absolute;
-  top: 37%;
-}
-
-:root {
-  --clr-neon: rgb(65 105 225);
-  --clr-bg: rgb(24 24 24);
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-body {
-  min-height: 100vh;
-  display: flex;
-  place-items: center;
-  background: var(--clr-bg);
-  font-family: "Balsamiq Sans", cursive;
-  color: var(--clr-neon);
-  padding-right: 10rem;
-  justify-content: center;
-}
-
-.myButton {
-	box-shadow: 0px 0px 0px 2px #9fb4f2;
-	background:linear-gradient(to bottom, #7892c2 5%, #476e9e 100%);
-	background-color:#7892c2;
-	border-radius:10px;
-	border:1px solid #4e6096;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:19px;
-	padding:12px 37px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #283966;
-}
-.myButton:hover {
-	background:linear-gradient(to bottom, #476e9e 5%, #7892c2 100%);
-	background-color:#476e9e;
-}
-.myButton:active {
-	position:relative;
-	top:1px;
-}
-
-.myButton2 {
-	box-shadow: 0px 0px 0px 2px #cf866c;
-	background:linear-gradient(to bottom, #d0451b 5%, #bc3315 100%);
-	background-color:#d0451b;
-	border-radius:10px;
-	border:1px solid #942911;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:19px;
-	padding:12px 37px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #854629;
-}
-.myButton2:hover {
-	background:linear-gradient(to bottom, #bc3315 5%, #d0451b 100%);
-	background-color:#bc3315;
-}
-.myButton2:active {
-	position:relative;
-	top:1px;
-}
-
-        
-
-
-</style>
-</head>
-<body>
-<script src="app.js" defer></script>
-<script src="https://api.countapi.xyz/hit/negr.ml3/visits?callback=liveViews" async>
-</script>
-
-<h2 id='visits'>0</h2>
-
-<!-- Google fonts -->
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@700&display=swap" rel="stylesheet">
-<link rel="icon" href="https://cdn.discordapp.com/attachments/859846461332520968/867337459423903744/unknown.png">
-
-<h3> CS:GO Jailbreak </h3>
-<a href="http://hlstats.fakaheda.eu/hlxce_186497/hlstats.php" style="margin:1rem;" class="myButton">hlstats</a>
-<a href="https://banlist.gamesites.cz/csgo/jb/" style="margin:1rem;" class="myButton">banlist</a>
-<a href="https://www.gamesites.cz/forum/counter-strike-global-offensive-f49.html" style="margin:1rem;" class="myButton">forum</a>
-<a href="https://www.gamesites.cz/forum/admini-f931.html" style="margin:1rem;" class="myButton2">admin forum</a>
+<!-- Display the countdown timer in an element -->
+<p id="demo">
+    <h2>Přijimačky nejsou daleko</h2>
+</p>
 <script>
-function liveViews(response) {
-    document.getElementById('visits').innerText = response.value;
-}
+// Set the date we're counting down to
+var countDownDate = new Date("Apr 12, 2022 00:00:01").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Display the result in the element with id="demo"
+  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+
+  // If the count down is finished, write some text
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "Dnes je ten den.";
+  }
+}, 1000);
 </script>
-</body>
-</html>
+
+<style>
+    *{
+        padding:5px;
+        margin:0;
+        font-family: sans-serif;
+    }
+    body{
+        background: #34495e;
+        flex-direction: column-reverse;
+        display: flex;
+        place-items: center;
+        justify-content: center;
+        min-height: 100vh;
+    }
+    h2{
+        color: darkgray;
+        text-shadow: 0px 0px 3px #000000;
+    }
+    p{
+        color: white;
+        font-size: 4vh;
+        text-shadow: 0px 0px 5px #000000;
+    }
+</style>
