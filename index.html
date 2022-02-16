@@ -4,7 +4,6 @@
     <h2>Přijimačky nejsou daleko3</h2>
 </p>
 <script>
-document.getElementById("page-title").innerHTML = "Technykalooooz" 
 // Set the date we're counting down to
 var countDownDate = new Date("Apr 12, 2022 00:00:01").getTime();
 
@@ -24,8 +23,8 @@ var x = setInterval(function() {
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
   // Display the result in the element with id="demo"
-  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
-  + minutes + "m " + seconds + "s ";
+  document.getElementById("demo").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+  document.getElementById("page-title").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s "; 
 
   // If the count down is finished, write some text
   if (distance < 0) {
